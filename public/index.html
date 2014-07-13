@@ -1,0 +1,116 @@
+<!Doctype html>
+<html>
+  <head>
+    <title>Chore List</title>
+    <style>
+    body {
+    color: #444;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    margin-top: 50px;
+    }
+    h1 {
+    color: #999;
+    font-size: 4em;
+    font-weight: 100;
+    }
+    h2 {
+    font-weight: 300;
+    }
+    h1, h2 {
+    text-align: center;
+    }
+    input {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    padding: 5px 10px;
+    }
+    ul {
+    padding-left: 20px;
+    }
+    li {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    list-style: none;
+    margin: 0 auto;
+    padding: 10px;
+    }
+    li:nth-child(even) {
+    background: #49e;
+    }
+    li:nth-child(odd) {
+    background: #eee;
+    }
+    span.vote {
+    color: #339900;
+    margin-left: 5px;
+    }
+    .wrapper {
+    margin: auto;
+    max-width: 1280px;
+    }
+    .sections {
+    display: -webkit-flex;
+    }
+    .sections section {
+    -webkit-flex: 1;
+    margin: 0 10px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Chore List</h1>
+      <div class="sections">
+        <section id="Xowie">
+          <h2>Xowie</h2>
+          <form id="Xowie" action="">
+            <input type="text" placeholder="Enter a chore" id="Xowie"/>
+          </form>
+          <ul id="Xowie">
+          </ul>
+        </section>
+                <section id="gavin">
+          <h2>Gavin</h2>
+          <form id="gavin" action="">
+            <input type="text" placeholder="Enter a chore" id="gavin"/>
+          </form>
+          <ul id="gavin">
+          </ul>
+        </section>
+      </div>
+      <script src="/vendor/jquery.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
+      <script type="text/javascript">
+      var socket = io();
+      $("form").submit(function(form){
+      var id = form.target.id;
+      var form = "form#"+id;
+      var input = form + "> input";
+      socket.emit("message", [$(input).val(), id]);
+      $(input).val("");
+      return false;
+      });
+      socket.on("message", function(msg){
+      var ul = "ul#" + msg[1];
+      var message = msg[0];
+      $(ul).append($('<li>').text(message));
+        var ID = 0;
+        $("ul li").each(function(){
+        ID++;
+        $(this).attr("id", ID);
+        });
+        });
+        $("ul").bind("click", "li", function(event){
+        var id = event.target.id;
+        socket.emit("vote", id);
+        return false;
+        });
+        socket.on("vote", function(id){
+        $("<span class=\"vote\">&#x2713;</span>").appendTo($("li#"+id));
+        });
+        </script>
+      </body>
+    </html>
