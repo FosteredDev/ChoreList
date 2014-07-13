@@ -1,7 +1,27 @@
 {
   "name": "chorelist",
-  "version": "0.1.0",
-  "description": "Kids chorelist built with Nodejs and Socket.io",
+  "version": "0.0.0",
+  "description": "Kids chorelist built on express and Socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+    "repository": {
+    "type": "git",
+    "url": "https://github.com:FosteredDevelopment/ChoreList.git"
+  },
+  "keywords": [
+    "chore",
+    "list",
+    "kids"
+  ],
+  "author": "Dylan Foster <dylan947@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FosteredDevelopment/chorelist/issues"
+  },
+  "homepage": "https://github.com/FosteredDevelopment/chorelist",
+  "readme": "README.md",
   "dependencies": {
     "express": "4.3.1",
     "socket.io": "1.0.2"
