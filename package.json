@@ -1,0 +1,16 @@
+{
+  "name": "chorelist",
+  "version": "0.1.0",
+  "description": "",
+  "dependencies": {
+    "express": "4.3.1",
+    "socket.io": "1.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.6",
+    "gulp-eslint": "^0.1.8",
+    "gulp-istanbul": "^0.2.0",
+    "gulp-jsonlint": "0.0.3",
+    "gulp-mocha": "^0.5.1"
+  }
+}

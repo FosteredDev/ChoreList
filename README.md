@@ -26,5 +26,9 @@ You should see something like the following
 
 ![](http://i.imgur.com/v8oML2D.png)
 
+Enter your childs chores and hit enter and watch the instant magic. 
+
+Once
+
 ##License
 MIT
