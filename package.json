@@ -1,7 +1,7 @@
 {
   "name": "chorelist",
   "version": "0.1.0",
-  "description": "",
+  "description": "Kids chorelist built with Nodejs and Socket.io",
   "dependencies": {
     "express": "4.3.1",
     "socket.io": "1.0.2"

@@ -28,7 +28,9 @@ You should see something like the following
 
 Enter your childs chores and hit enter and watch the instant magic. 
 
-Once
+Once the chores are done, click on the chore to check it off.
+
+![](http://i.imgur.com/8iXEBSm.gif)
 
 ##License
 MIT
