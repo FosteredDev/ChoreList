@@ -1,6 +1,6 @@
 {
   "name": "chorelist",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Real-time chorelist application for your kids",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,6 @@
     "url": "https://github.com/FosteredDevelopment/chorelist/issues"
   },
   "homepage": "https://github.com/FosteredDevelopment/chorelist",
-  "readme": "README.md",
   "dependencies": {
     "express": "4.3.1",
     "socket.io": "1.0.2"
